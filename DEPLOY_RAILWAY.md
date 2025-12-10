@@ -16,9 +16,11 @@ This guide will help you deploy the **MeetingMind** application (Backend + Front
     *   Click on the newly created service card.
     *   Go to **Settings**.
     *   **Root Directory**: Set this to `/backend`.
+    *   **Source Code**:
+        *   **Dockerfile Path**: `/backend/Dockerfile` (Railway should auto-detect, but specify if needed)
     *   **Watch Paths** (optional): `/backend/**`.
-    *   **Build Command**: `npm install && npm run build` (Railway usually auto-detects `npm install` and `npm build`, but verify).
-    *   **Start Command**: `npm start`
+    *   **Build Command**: (Leave empty if using Dockerfile)
+    *   **Start Command**: (Leave empty if using Dockerfile)
 4.  **Variables (Environment)**:
     *   Go to the **Variables** tab.
     *   Add the following variables (copy values from your local `.env`):
@@ -48,9 +50,10 @@ This guide will help you deploy the **MeetingMind** application (Backend + Front
     *   Click the new service card.
     *   Go to **Settings**.
     *   **Root Directory**: Set this to `/frontend`.
-    *   **Build Command**: `npm install && npm run build`
-    *   **Start Command**: `npx serve -s dist -l $PORT`
-        *   *Note*: Railway injects a `PORT` variable. `serve` needs `-l` to listen on it.
+    *   **Source Code**:
+        *   **Dockerfile Path**: `/frontend/Dockerfile`
+    *   **Build Command**: (Leave empty)
+    *   **Start Command**: (Leave empty)
 3.  **Variables**:
     *   `VITE_API_URL`: (The *Public Domain* of your Backend Service).
         *   *To get Backend URL*: Go to Backend Service > Settings > Networking > Generate Domain. Copy that URL (e.g., `https://backend-production.up.railway.app/api`).

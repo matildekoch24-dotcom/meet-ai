@@ -4,6 +4,9 @@
   "description": "Backend API for MeetingMind with Firebase Auth and MongoDB",
   "main": "dist/server.js",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
